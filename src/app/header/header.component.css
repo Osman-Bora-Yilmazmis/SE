@@ -1,0 +1,21 @@
+
+.toolbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#button1 {
+  width: 150px;
+}
+mat-icon{
+  margin-right: 5px; /* Add right margin to the mat-icon */
+}
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.mat-button,
+.mat-icon-button {
+  margin-right: 8px; /* Adjust the margin as needed */
+}

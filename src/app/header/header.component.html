@@ -1,0 +1,58 @@
+<mat-toolbar color="primary" class="toolbar-container">
+  <span>Software Engineering Projesi</span>
+  <div class="container">
+    <a>
+        <img src="assets/indir.jpg" style="width: 72px; height: 100%;">
+    </a>
+  </div>
+  <span class="example-spacer"></span>
+  <div class="button-container" *ngIf="userService.user != undefined">
+    <button id="button1" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>account_circle</mat-icon>
+      <span>Kullanıcı Paneli</span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/home">
+        <mat-icon>event</mat-icon>
+        <span>Etkinlikler</span>
+      </button>
+      <button mat-menu-item routerLink="/usersettings">
+        <mat-icon>settings</mat-icon>
+        <span>Kullanıcı Bilgileri</span>
+      </button>
+    </mat-menu>
+    <button mat-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Çıkış Yap</span>
+    </button>
+  </div>
+</mat-toolbar>
+<!--
+<mat-toolbar class="headercontainer" color="primary">
+  <div>Software Engineering Projesi</div>
+  <div class="button-container">
+    <div *ngIf="userService.user != undefined">
+      <button *ngIf="userService.user?.role === 'admin'" mat-button>Admin Düğmesi</button>
+    </div>
+    <button *ngIf="userService.user != undefined" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+      <span>Açılır kapanır</span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+    <button *ngIf="userService.user != undefined" mat-button (click)="logout()">Çıkış Yap</button>
+  </div>
+</mat-toolbar>
+-->

@@ -1,0 +1,92 @@
+<div class="page-header">
+    <div class="container">
+        <h1><b>Kullanıcı Bilgileri</b></h1>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm">
+            <form #studentDetailsForm="ngForm">
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Ad</mat-label>
+                            <input matInput name="firstName">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Soyad</mat-label>
+                            <input matInput name="lastName">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Kullanıcı Adı</mat-label>
+                            <input matInput name="firstName">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Doğum Tarihi</mat-label>
+                            <input matInput [matDatepicker]="picker" name="dateOfBirth">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput  name="email">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Telefon</mat-label>
+                            <input matInput  name="mobile">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label >Select an option</mat-label>
+                            <mat-select [(value)]="selected">
+                              <mat-option value="erkek">Erkek</mat-option>
+                              <mat-option value="kadın">Kadın</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Adres</mat-label>
+                            <textarea matInput
+                                name="physicalAddress"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm">
+            <div class="col mb-5"  style="display: flex; justify-content: center;">
+              <img [src]="imageUrl" alt="Description" width="200" height="200">
+            </div>
+            <mat-divider></mat-divider>
+            <div class="col mt-5" style="display: flex; justify-content: center;" >
+                <button mat-raised-button color="primary">Bilgilerimi Güncelle</button>
+                
+            </div>
+        </div>
+    </div>
+
+</div>

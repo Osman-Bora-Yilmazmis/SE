@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="form-container">
+      <div class="title">Hesap Oluştur</div>
+      <form [formGroup]="createUserForm">
+          <mat-form-field appearance="outline">
+              <mat-label>Emailinizi Giriniz</mat-label>
+              <input matInput formControlName="email"/>
+              <mat-error>
+                <p *ngIf="f['email'].errors && f['email'].errors['required']">Email zorunludur</p>
+                <p *ngIf="f['email'].errors && f['email'].errors['email']">Email formatını doğru giriniz</p>
+
+              </mat-error>
+
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Kullanıcı Adınızı Giriniz</mat-label>
+            <input matInput formControlName="username"/>
+            <mat-error>
+              <p *ngIf="f['username'].errors && f['username'].errors['required']">Kullanıcı adı zorunludur</p>
+              <p *ngIf="f['username'].errors && f['username'].errors['maxlength']">Maksimum 10 karakter giriniz</p>
+
+            </mat-error>
+        </mat-form-field>
+
+          <mat-form-field appearance="outline">
+              <mat-label>Şifrenizi Giriniz</mat-label>
+              <input type="password" formControlName="password" matInput/>
+              <mat-error>
+                <p *ngIf="f['password'].errors && f['password'].errors['required']">Şifre zorunludur</p>
+                <p *ngIf="f['password'].errors && f['password'].errors['minlength']">Minumum 8 karakter giriniz</p>
+
+              </mat-error>
+          </mat-form-field>
+      </form>
+      <div class="buttons-container">
+          <button mat-raised-button class="login-button" (click)="createAccount()" [disabled]="createUserForm.invalid">
+              Kaydol
+          </button>
+          <p>Veya</p>
+          <button mat-button routerLink="/login">Giriş Yap</button>
+          <!-- {{createUserForm.value | json}} -->
+      </div>
+  </div>
+</div>
+

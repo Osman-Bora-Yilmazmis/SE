@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "email": "can@hotmail.com",
+      "username": "canboz",
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "email": "bora@hotmail.com",
+      "username": "bora",
+      "password": "123123123",
+      "id": 2
+    },
+    {
+      "email": "asdasd@hotmail.com",
+      "username": "AAAA",
+      "password": "12345678",
+      "name": "",
+      "surname": "",
+      "dateOfBirth": "",
+      "Adress": "",
+      "id": 3
+    },
+    {
+      "email": "merhaba@hotmail.com",
+      "username": "merhaba",
+      "password": "12345678",
+      "name": "",
+      "surname": "",
+      "phone":0,
+      "gender":"",
+      "dateOfBirth": "",
+      "Adress": "",
+      "id": 4
+    }
+  ],
+  "questions": []
+}
