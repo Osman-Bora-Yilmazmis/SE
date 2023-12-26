@@ -24,6 +24,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
+import { EventDetailComponent } from './home/event-detail/event-detail.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import {MatDividerModule} from '@angular/material/divider';
     LoginComponent,
     CreateUserComponent,
     HomeComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule,
   ],
   providers: [BaseService],
   bootstrap: [AppComponent]

@@ -1,0 +1,32 @@
+.example-card {
+    max-width: 800px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  mat-form-field{
+    width: 100%;
+}
+
+.p-1{
+    padding: 20px 0px;
+}
+
+.custom-date-field {
+    width: 100%; /* Adjust the width as needed */
+  }
+  
+  .custom-date-field .mat-form-field-outline {
+    color: black; /* Set the outline color to black */
+  }
+  
+  .custom-date-field.mat-focused .mat-form-field-outline-thicker {
+    border-width: 2px; /* Set the border thickness when focused */
+  }
+  
+  .current-date {
+    background-color: #e0e0e0; /* Set the background color for the current date */
+  }

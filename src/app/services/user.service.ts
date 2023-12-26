@@ -22,4 +22,16 @@ export class UserService extends BaseService {
    {
      return this.getReq('/users?email='+email)
    }
+
+   public getUserById(userId: string) {
+    return this.getReq(`/users/${userId}`);
+   }
+
+   public updateUserById(userId: string, updatedUserObj: any) {
+    // Kullanıcı bilgilerini güncelle ve PUT isteği gönder
+    return this.putReq(`/users/${userId}`, updatedUserObj);
+   }
+
+  
+   
 }

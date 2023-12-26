@@ -1,39 +1,57 @@
 {
   "users": [
     {
+      "name": "CAN",
+      "surname": "Arslan",
       "email": "can@hotmail.com",
-      "username": "canboz",
+      "phone": "05377333456",
+      "gender": "Erkek",
+      "address": "İSTANBUL",
       "password": "12345678",
-      "id": 1
+      "id": 1,
+      "authorization_level": "admin"
     },
     {
-      "email": "bora@hotmail.com",
-      "username": "bora",
-      "password": "123123123",
-      "id": 2
+      "email": "mehmet@hotmail.com",
+      "password": "12345678",
+      "name": "mehmet",
+      "surname": "ali",
+      "phone": "0533753456",
+      "gender": "Erkek",
+      "address": "Eskişehir/Odunpazarı",
+      "id": 2,
+      "authorization_level": "customer"
     },
     {
-      "email": "asdasd@hotmail.com",
-      "username": "AAAA",
+      "email": "onur@hotmail.com",
       "password": "12345678",
-      "name": "",
-      "surname": "",
-      "dateOfBirth": "",
-      "Adress": "",
-      "id": 3
-    },
-    {
-      "email": "merhaba@hotmail.com",
-      "username": "merhaba",
-      "password": "12345678",
-      "name": "",
-      "surname": "",
-      "phone":0,
-      "gender":"",
-      "dateOfBirth": "",
-      "Adress": "",
-      "id": 4
+      "name": "onur",
+      "surname": "akbaş",
+      "phone": "0567799423",
+      "gender": "erkek",
+      "address": "İzmir",
+      "id": 3,
+      "authorization_level": "customer"
     }
   ],
-  "questions": []
+  "events": [
+    {
+      "name": "Test Event",
+      "detail": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+      "eventCreator": "6589b15bd819e89155d7d22e",
+      "price": "1000",
+      "location": "Ahmet Mehmet Bulvarı",
+      "date": "2023-12-30T16:54:46.720Z",
+      "id": "6589b450c94a215b07198ce1"
+    },
+    {
+      "name": "Test Event2",
+      "detail": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "eventCreator": "6589b15bd819e89155d7d22e",
+      "price": "400",
+      "location": "MERHABA",
+      "date": "2023-12-30T16:54:46.720Z",
+      "id": "6589b450c94a215b07198ce2"
+    }
+  ]
 }
