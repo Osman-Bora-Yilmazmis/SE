@@ -36,15 +36,6 @@
   ],
   "events": [
     {
-      "name": "Test Event",
-      "detail": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
-      "eventCreator": "6589b15bd819e89155d7d22e",
-      "price": "1000",
-      "location": "Ahmet Mehmet Bulvarı",
-      "date": "2023-12-30T16:54:46.720Z",
-      "id": "6589b450c94a215b07198ce1"
-    },
-    {
       "name": "Test Event2",
       "detail": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
       "eventCreator": "6589b15bd819e89155d7d22e",
@@ -52,6 +43,15 @@
       "location": "MERHABA",
       "date": "2023-12-30T16:54:46.720Z",
       "id": "6589b450c94a215b07198ce2"
+    },
+    {
+      "name": "BBBBB",
+      "detail": "BBBBB",
+      "eventCreator": "BBBBB",
+      "price": "123123",
+      "location": "BBBBB",
+      "date": "BBBBB",
+      "id": "KWifMwB"
     }
   ]
 }

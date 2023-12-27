@@ -24,6 +24,24 @@ export class EventDetailComponent implements OnInit {
   isNewEvent = false;
   header = "";
   imageUrl: string = "assets/personicon.png";
+  isBuyButtonVisible: boolean = true;
+  isReturnButtonVisible: boolean = false;
+
+  buyEvent() {
+    // Satın al butonuna tıklandığında
+    this.isBuyButtonVisible = false;
+    this.isReturnButtonVisible = true;
+    this.snackbar.open('Event başarıyla satın alınmıştır','Ok');
+    // İlgili satın alma işlemleri burada yapılabilir
+  }
+
+  returnEvent() {
+    // İade et butonuna tıklandığında
+    this.isBuyButtonVisible = true;
+    this.isReturnButtonVisible = false;
+    this.snackbar.open('Event başarıyla iade edilmiştir','Ok');
+    // İlgili iade işlemleri burada yapılabilir
+  }
   
   event: Events = { //placeholder oluşturmak için oluşturduk
     id: "",
@@ -71,8 +89,9 @@ export class EventDetailComponent implements OnInit {
       }
     )
   }
-  UpdateEvent(e:any){
-    this.eventService.updateEventById(this.eventId!,e).subscribe(
+
+  UpdateEvent(updatedEvent:any){
+    this.eventService.updateEventById(this.eventId!,updatedEvent).subscribe(
       (response: any) => {
         this.eventForm.patchValue(response);
         this.snackbar.open('Eventiniz Güncellenmiştir','Ok');
@@ -80,6 +99,25 @@ export class EventDetailComponent implements OnInit {
       
     );
   }
+  CreateEvent(){
+    this.eventService.createEvent(this.eventForm.value).subscribe(
+      (success) => {
+        debugger
+        this.snackbar.open('Event Başarılı Bir Şekilde Eklendi','Ok',{duration:3000})
+        this.router.navigateByUrl('home');
+      },
+    )
+  }
+  DeleteEvent(){
+    this.eventService.deleteEventById(this.eventId!).subscribe(
+      (success) => {
+        console.log(success)
+        this.snackbar.open('Event başarılı bir şekilde silindi',"Ok",{duration:3000})
+        this.router.navigateByUrl('home');
+      }
+    )
+  }
+
 
 }
 

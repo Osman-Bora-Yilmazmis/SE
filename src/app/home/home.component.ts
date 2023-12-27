@@ -11,7 +11,7 @@ import { EventService } from '../services/event.service';
 })
 
 export class HomeComponent implements AfterViewInit {
-  displayedColumns: string[] = ['_id', 'name', 'eventCreator', 'price', 'location' ,'date',"edit"];
+  displayedColumns: string[] = ['id', 'name', 'eventCreator', 'price', 'location' ,'date',"edit"];
   dataSource = new MatTableDataSource<Events>();
 
   @ViewChild(MatPaginator)
@@ -37,8 +37,11 @@ export class HomeComponent implements AfterViewInit {
   filterStudents(){
     this.dataSource.filter = this.filterString.trim().toLowerCase();
   }
+  
+
 
 }
+
 
 export interface Events {
   id: string,

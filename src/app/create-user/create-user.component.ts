@@ -38,8 +38,5 @@ export class CreateUserComponent implements OnInit {
         this.router.navigateByUrl('/login');
         this.snackbar.open('Kullanıcı Başarıyla Oluşturuldu','Ok');
       })
-
-
   }
-
 }
