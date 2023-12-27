@@ -75,9 +75,8 @@
                 <div class="col mb-5"  style="display: flex; justify-content: center;">
                 <img [src]="imageUrl" alt="Description" width="200" height="200">
                 </div>
-                <mat-divider></mat-divider>
                 <div class="col mt-5" style="display: flex; justify-content: center;" >
-                    <button mat-raised-button color="primary" (click)="UpdateUser(profileForm.value)">Bilgilerimi Güncelle</button>
+                    <button mat-raised-button color="primary"  [disabled]="profileForm.invalid" (click)="UpdateUser(profileForm.value)">Bilgilerimi Güncelle</button>
                 </div>
             </div>
         </div>

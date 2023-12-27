@@ -8,7 +8,7 @@ body {
   background-image: url('assets/arkaplan.jpg'); /* Resmin dosya yolunu belirtin */
   background-size: cover; /* Resmin sayfa boyunca yayılmasını sağlar */
   background-position: center; /* Resmi ortalamak için */
-  background-repeat: no-repeat; /* Resmi tekrarlamamak için */
+  background-repeat: repeat; /* Resmi tekrarlamamak için */
   font-family: 'Roboto', sans-serif; /* Fontu belirtin, eğer varsa */
 }
 

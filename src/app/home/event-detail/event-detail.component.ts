@@ -98,6 +98,7 @@ export class EventDetailComponent implements OnInit {
             (success) => {
               this.event = success;
               this.eventForm.patchValue(this.event);
+              this.eventForm.get('eventCreator')!.setValue(success.eventCreator);
             }
           )
         }
@@ -110,9 +111,6 @@ export class EventDetailComponent implements OnInit {
     this.userService.getUserById(userData.id).subscribe(
       (user: any) => {
         this.currentAuthorization = user.authorization_level
-        this.eventForm.get('eventCreator')!.setValue(user.name + " " + user.surname);
-        console.log("1." + this.eventForm.get('eventCreator')! )
-        console.log("2." + user.eventCreator)
       },
       
     );

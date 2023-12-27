@@ -1,24 +1,35 @@
 {
   "users": [
     {
-      "name": "CAN",
+      "name": "Can",
       "surname": "Arslan",
       "email": "can@hotmail.com",
       "phone": "05377333456",
       "gender": "Erkek",
-      "address": "İSTANBUL",
+      "address": "İstanbul",
       "password": "12345678",
       "id": 1,
       "authorization_level": "eventCreator"
     },
     {
-      "email": "mehmet@hotmail.com",
+      "name": "Fatma",
+      "surname": "Şahin",
+      "email": "fatma@hotmail.com",
+      "phone": "0566733486",
+      "gender": "Kadın",
+      "address": "İzmir",
       "password": "12345678",
-      "name": "mehmet",
-      "surname": "ali",
+      "id": 4,
+      "authorization_level": "eventCreator"
+    },
+    {
+      "name": "Mehmet",
+      "surname": "Ali",
+      "email": "mehmet@hotmail.com",
       "phone": "0533753456",
       "gender": "Erkek",
       "address": "Eskişehir/Odunpazarı",
+      "password": "12345678",
       "id": 2,
       "authorization_level": "customer"
     },
@@ -36,13 +47,112 @@
   ],
   "events": [
     {
-      "name": "MErhaba ",
-      "detail": "MErhaba MErhaba MErhaba MErhaba MErhaba MErhaba ",
-      "eventCreator": "CAN Arslan",
-      "price": "150",
-      "location": "MErhaba ",
-      "date": "2023-12-17T21:00:00.000Z",
-      "id": 1
+      "name": "Sobe Club",
+      "detail": "Sobe Club Partisi",
+      "eventCreator": "Can Arslan",
+      "price": "10",
+      "location": "Küçükpark",
+      "date": "2026-07-20T21:00:00.000Z",
+      "id": 2
+    },
+    {
+      "name": "Duman Konseri",
+      "detail": "Duman konseri duman alsancağa geliyor herkes gelsin",
+      "eventCreator": "Fatma Şahin",
+      "price": "200",
+      "location": "Alsancak/Havagazı Fabrikası",
+      "date": "2023-12-27T21:00:00.000Z",
+      "id": 3
+    },
+    {
+      "name": "Manga Konseri",
+      "detail": "Manga İstanbula geldi herkesi bekliyoruz",
+      "eventCreator": "Can Arslan",
+      "price": "400",
+      "location": "İstanbul/Zorlu Center",
+      "date": "2023-12-28T21:00:00.000Z",
+      "id": 4
+    },
+    {
+      "name": "Atık Toplama Etkinliği",
+      "detail": "Plajlardaki atıkları temizleyeceğiz. seni yeneceğiz çevre kirliliği",
+      "eventCreator": "Can Arslan",
+      "price": "100",
+      "location": "Balçova/Yaşampark",
+      "date": "2023-12-08T21:00:00.000Z",
+      "id": 5
+    },
+    {
+      "name": "Fenerbahçe-Galatasaray",
+      "detail": "Dev derbide kazanan kim olucak gelen gelsin",
+      "eventCreator": "Fatma Şahin",
+      "price": "5000",
+      "location": "Şükrü Saraçoğlu Stadyumu",
+      "date": "2023-12-28T21:00:00.000Z",
+      "id": 6
+    },
+    {
+      "name": "Tuck Cafe Partisi",
+      "detail": "Tanışma partimize herkesi bekliyoruz",
+      "eventCreator": "Can Arslan",
+      "price": "40",
+      "location": "Bornova",
+      "date": "2023-12-29T21:00:00.000Z",
+      "id": 7
+    },
+    {
+      "name": "IEEE Toplantısı",
+      "detail": "Monopoly oynayacağız",
+      "eventCreator": "Can Arslan",
+      "price": "5",
+      "location": "Espello Lab",
+      "date": "2023-12-26T21:00:00.000Z",
+      "id": 8
+    },
+    {
+      "name": "Talk Show",
+      "detail": "Hasan Can Kaya izmire geliyor herkesi bekleriz",
+      "eventCreator": "Can Arslan",
+      "price": "300",
+      "location": "Konak",
+      "date": "2023-12-29T21:00:00.000Z",
+      "id": 9
+    },
+    {
+      "name": "Bale Gösterisi",
+      "detail": "Konak sahilde bale gösterimiz gerçekleşecektir herkesi bekleriz",
+      "eventCreator": "Can Arslan",
+      "price": "400",
+      "location": "Konak/Sahil",
+      "date": "2024-02-14T21:00:00.000Z",
+      "id": 10
+    },
+    {
+      "name": "Buz Pateni Gösterisi",
+      "detail": "Bornova buz pateni salonunda gösteri gerçekleşecektir. Davetlisiniz..",
+      "eventCreator": "Fatma Şahin",
+      "price": "100",
+      "location": "Bornova",
+      "date": "2023-12-28T21:00:00.000Z",
+      "id": 11
+    },
+    {
+      "name": "Bilardo Turnuvası",
+      "detail": "Dünyaca ünli bilardo oyuncuları İzmire geliyor. Turnuva çok çekişmeli olacak...",
+      "eventCreator": "Can Arslan",
+      "price": "300",
+      "location": "İzmir/Güzelbahçe",
+      "date": "2024-02-10T21:00:00.000Z",
+      "id": 12
+    },
+    {
+      "name": "Halısaha Turnuvası",
+      "detail": "Okullar arası halısaha takımları karşı karşıya gelecek. çekişmeli maçlar bizi bekliyor..",
+      "eventCreator": "Can Arslan",
+      "price": "50",
+      "location": "İzmir/Bornova",
+      "date": "2024-01-04T21:00:00.000Z",
+      "id": 13
     }
   ]
 }

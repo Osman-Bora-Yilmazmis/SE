@@ -9,13 +9,12 @@
     <mat-card class="example-card" style="opacity: 0.8;">
       <div class="row">
         <div class="col-6">
-          <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" style="max-width: 600px; max-height: 600px;" alt="Photo of a Shiba Inu">
+          <img *ngIf="isReturnButtonVisible" mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" style="max-width: 600px; max-height: 600px;" alt="Photo of a Shiba Inu">
           <div style="display: flex; justify-content: center;">
             <mat-spinner class="mt-5" *ngIf="spinner"></mat-spinner>
           </div>
-          
         </div>
-        <div class="col-6">
+        <div class="col-6" [class.col-12]="currentAuthorization == 'eventCreator'">
           <form [formGroup]="eventForm">
             <div class="row">
               <div class="col-12">
