@@ -26,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import { EventDetailComponent } from './home/event-detail/event-detail.component';
 import { MatCardModule } from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { MatCardModule } from '@angular/material/card';
     MatSelectModule,
     MatDividerModule,
     MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [BaseService],
   bootstrap: [AppComponent]

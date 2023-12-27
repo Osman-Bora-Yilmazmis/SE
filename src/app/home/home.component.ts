@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { EventService } from '../services/event.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   filterString = ''
+  currentAuthorization = '';
 
 
   
@@ -24,13 +26,23 @@ export class HomeComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor( private eventService: EventService  ) { }
+  constructor( private eventService: EventService ,private userService: UserService ) { }
 
   ngOnInit(): void {
     this.eventService.getEvents().subscribe(
       (res: Events[]) => {
         this.dataSource.data = res;
       }
+    );
+    const storedUserData = localStorage.getItem('user');
+    if (storedUserData) {
+      var userData = JSON.parse(storedUserData);
+    }
+    this.userService.getUserById(userData.id).subscribe(
+      (user: any) => {
+        this.currentAuthorization = user.authorization_level
+      },
+      
     );
   }
 

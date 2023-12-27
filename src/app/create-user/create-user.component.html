@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="form-container">
+  <div class="mat-card">
+    <div class="form-container">
       <div class="title">Hesap Oluştur</div>
       <form [formGroup]="createUserForm">
           <mat-form-field appearance="outline">
@@ -38,9 +39,12 @@
               Kaydol
           </button>
           <p>Veya</p>
-          <button mat-button routerLink="/login">Giriş Yap</button>
+          <button mat-button  routerLink="/login">Giriş Yap</button>
           <!-- {{createUserForm.value | json}} -->
       </div>
   </div>
+  </div>
+   
+ 
 </div>
 

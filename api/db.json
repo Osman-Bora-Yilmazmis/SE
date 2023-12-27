@@ -9,7 +9,7 @@
       "address": "İSTANBUL",
       "password": "12345678",
       "id": 1,
-      "authorization_level": "admin"
+      "authorization_level": "eventCreator"
     },
     {
       "email": "mehmet@hotmail.com",
@@ -23,35 +23,26 @@
       "authorization_level": "customer"
     },
     {
-      "email": "onur@hotmail.com",
-      "password": "12345678",
       "name": "onur",
-      "surname": "akbaş",
+      "surname": "Günaydın",
+      "email": "onur@hotmail.com",
       "phone": "0567799423",
       "gender": "erkek",
       "address": "İzmir",
+      "password": "12345678",
       "id": 3,
       "authorization_level": "customer"
     }
   ],
   "events": [
     {
-      "name": "Test Event2",
-      "detail": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-      "eventCreator": "6589b15bd819e89155d7d22e",
-      "price": "400",
-      "location": "MERHABA",
-      "date": "2023-12-30T16:54:46.720Z",
-      "id": "6589b450c94a215b07198ce2"
-    },
-    {
-      "name": "BBBBB",
-      "detail": "BBBBB",
-      "eventCreator": "BBBBB",
-      "price": "123123",
-      "location": "BBBBB",
-      "date": "BBBBB",
-      "id": "KWifMwB"
+      "name": "MErhaba ",
+      "detail": "MErhaba MErhaba MErhaba MErhaba MErhaba MErhaba ",
+      "eventCreator": "CAN Arslan",
+      "price": "150",
+      "location": "MErhaba ",
+      "date": "2023-12-17T21:00:00.000Z",
+      "id": 1
     }
   ]
 }

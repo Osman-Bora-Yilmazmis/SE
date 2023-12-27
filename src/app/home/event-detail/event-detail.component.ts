@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from 'src/app/services/event.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserService } from 'src/app/services/user.service';
 
 export interface Events {
-  id: string,
+  id: number,
   name: string,
   detail: string,
   eventCreator: string,
@@ -26,25 +27,39 @@ export class EventDetailComponent implements OnInit {
   imageUrl: string = "assets/personicon.png";
   isBuyButtonVisible: boolean = true;
   isReturnButtonVisible: boolean = false;
+  currentAuthorization = "";
+  spinner = false
 
   buyEvent() {
     // Satın al butonuna tıklandığında
-    this.isBuyButtonVisible = false;
-    this.isReturnButtonVisible = true;
-    this.snackbar.open('Event başarıyla satın alınmıştır','Ok');
-    // İlgili satın alma işlemleri burada yapılabilir
+    this.spinner = true
+    
+    setTimeout(() => {
+      // 2 saniye sonra çalışacak işlemler
+      this.spinner = false;
+      this.isBuyButtonVisible = false;
+      this.isReturnButtonVisible = true;
+      // İlgili satın alma işlemleri burada yapılabilir
+      this.snackbar.open('Event başarıyla satın alınmıştır', 'Ok');
+    }, 2000); // 2000 milisaniye (2 saniye) beklenir
+    
   }
 
   returnEvent() {
-    // İade et butonuna tıklandığında
-    this.isBuyButtonVisible = true;
-    this.isReturnButtonVisible = false;
-    this.snackbar.open('Event başarıyla iade edilmiştir','Ok');
+    this.spinner = true
+    setTimeout(() => {
+      // 2 saniye sonra çalışacak işlemler
+      this.spinner = false;
+      this.isBuyButtonVisible = true;
+      this.isReturnButtonVisible = false;
+      this.snackbar.open('Event başarıyla iade edilmiştir', 'Ok');
+    }, 2000); // 2000 milisaniye (2 saniye) beklenir
+    
     // İlgili iade işlemleri burada yapılabilir
   }
   
   event: Events = { //placeholder oluşturmak için oluşturduk
-    id: "",
+    id: 0,
     name: "",
     detail: "",
     eventCreator: "",
@@ -53,16 +68,16 @@ export class EventDetailComponent implements OnInit {
     date: "",
   }
   eventForm = new FormGroup({
-    name: new FormControl(''),
-    detail: new FormControl(''),
-    eventCreator: new FormControl(''),
-    price: new FormControl(0),
-    location: new FormControl(''),
-    date: new FormControl(''),
+    name: new FormControl('',Validators.required),
+    detail: new FormControl('',Validators.required),
+    eventCreator: new FormControl('',Validators.required),
+    price: new FormControl(0,Validators.required),
+    location: new FormControl('',Validators.required),
+    date: new FormControl('',[Validators.required]),
   });
 
   
-  constructor(private eventService: EventService, private router: Router, private readonly route:ActivatedRoute,private snackbar:MatSnackBar) { }
+  constructor(private eventService: EventService,private userService: UserService, private router: Router, private readonly route:ActivatedRoute,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     //paramMap router'daki url'nin cevaptaki içerisinde id bulunan sahadaki değeri alır studentId değişkenine atar
@@ -88,13 +103,26 @@ export class EventDetailComponent implements OnInit {
         }
       }
     )
+    const storedUserData = localStorage.getItem('user');
+    if (storedUserData) {
+      var userData = JSON.parse(storedUserData);
+    }
+    this.userService.getUserById(userData.id).subscribe(
+      (user: any) => {
+        this.currentAuthorization = user.authorization_level
+        this.eventForm.get('eventCreator')!.setValue(user.name + " " + user.surname);
+        console.log("1." + this.eventForm.get('eventCreator')! )
+        console.log("2." + user.eventCreator)
+      },
+      
+    );
   }
 
   UpdateEvent(updatedEvent:any){
     this.eventService.updateEventById(this.eventId!,updatedEvent).subscribe(
       (response: any) => {
         this.eventForm.patchValue(response);
-        this.snackbar.open('Eventiniz Güncellenmiştir','Ok');
+        this.snackbar.open('Eventiniz Güncellenmiştir','Ok',{duration:3000});
       },
       
     );
@@ -102,13 +130,19 @@ export class EventDetailComponent implements OnInit {
   CreateEvent(){
     this.eventService.createEvent(this.eventForm.value).subscribe(
       (success) => {
-        debugger
-        this.snackbar.open('Event Başarılı Bir Şekilde Eklendi','Ok',{duration:3000})
-        this.router.navigateByUrl('home');
+        if (this.eventForm.invalid) {
+          this.snackbar.open('Lütfen Tüm Alanları Doldurun','Ok',{duration:3000})
+          return;
+        }else{
+          this.snackbar.open('Event Başarılı Bir Şekilde Eklendi','Ok',{duration:3000})
+          this.router.navigateByUrl('home');
+        }
+        
       },
     )
   }
   DeleteEvent(){
+    debugger
     this.eventService.deleteEventById(this.eventId!).subscribe(
       (success) => {
         console.log(success)
@@ -117,6 +151,7 @@ export class EventDetailComponent implements OnInit {
       }
     )
   }
+
 
 
 }

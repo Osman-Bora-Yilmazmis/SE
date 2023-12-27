@@ -19,7 +19,7 @@ export class UserSettingsComponent implements OnInit {
   profileForm = new FormGroup({
     name: new FormControl(''),
     surname: new FormControl(''),
-    email : new FormControl('', Validators.required),
+    email : new FormControl('', [ Validators.required,Validators.email]),
     phone: new FormControl(0),
     gender: new FormControl(''),
     address: new FormControl(''),

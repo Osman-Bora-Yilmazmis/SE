@@ -36,7 +36,7 @@ export class CreateUserComponent implements OnInit {
       this.userService.createAccount(this.createUserForm.value).subscribe((res:any)=>{
         console.log(res);
         this.router.navigateByUrl('/login');
-        this.snackbar.open('Kullanıcı Başarıyla Oluşturuldu','Ok');
+        this.snackbar.open('Kullanıcı Başarıyla Oluşturuldu','Ok',{duration:3000});
       })
   }
 }

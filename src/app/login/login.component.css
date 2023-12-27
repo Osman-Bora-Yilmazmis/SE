@@ -6,9 +6,10 @@
   height: 100%;
   justify-content: center;
   align-items: center;
+  opacity: 0.8;
 }
 
-.form-container{
+.mat-card{
   display: flex;
   flex-direction: column;
   align-items: center;
