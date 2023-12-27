@@ -43,6 +43,17 @@
       "password": "12345678",
       "id": 3,
       "authorization_level": "customer"
+    },
+    {
+      "email": "kadin@hotmail.com",
+      "password": "12345678",
+      "name": "Kadın",
+      "surname": "Demir",
+      "dateOfBirth": "",
+      "phone": "",
+      "gender": "",
+      "address": "",
+      "id": 5
     }
   ],
   "events": [

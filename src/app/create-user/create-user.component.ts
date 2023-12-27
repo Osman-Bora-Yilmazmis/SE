@@ -16,15 +16,16 @@ export class CreateUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  
   createUserForm = this.fb.group({
     email:['',[Validators.required,Validators.email]],
-    username:['',[Validators.required,Validators.maxLength(10)]],
     password:['',[Validators.required,Validators.minLength(8)]],
-    name:[''],
-    surname:[''],
+    name:['',Validators.required],
+    surname:['',Validators.required],
     dateOfBirth:[''],
-    Adress:[''],
+    phone : [''],
+    gender:[''],
+    address:[''],
   })
 
   get f(): { [key: string]: AbstractControl } {

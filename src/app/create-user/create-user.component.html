@@ -15,12 +15,17 @@
           </mat-form-field>
 
           <mat-form-field appearance="outline">
-            <mat-label>Kullanıcı Adınızı Giriniz</mat-label>
-            <input matInput formControlName="username"/>
+            <mat-label>Adınızı Giriniz</mat-label>
+            <input matInput formControlName="name"/>
             <mat-error>
-              <p *ngIf="f['username'].errors && f['username'].errors['required']">Kullanıcı adı zorunludur</p>
-              <p *ngIf="f['username'].errors && f['username'].errors['maxlength']">Maksimum 10 karakter giriniz</p>
-
+              <p *ngIf="f['name'].errors && f['name'].errors['name']">ad zorunludur</p>
+            </mat-error>
+        </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Soyadınızı Giriniz</mat-label>
+            <input matInput formControlName="surname"/>
+            <mat-error>
+              <p *ngIf="f['surname'].errors && f['surname'].errors['surname']">soyad zorunludur</p>
             </mat-error>
         </mat-form-field>
 

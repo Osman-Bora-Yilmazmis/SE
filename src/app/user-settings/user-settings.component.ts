@@ -33,6 +33,7 @@ export class UserSettingsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    debugger
     const storedUserData = localStorage.getItem('user');
     if (storedUserData) {
       var userData = JSON.parse(storedUserData);
