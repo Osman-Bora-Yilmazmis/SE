@@ -26,6 +26,7 @@ export class CreateUserComponent implements OnInit {
     phone : [''],
     gender:[''],
     address:[''],
+    authorization_level:['customer']
   })
 
   get f(): { [key: string]: AbstractControl } {

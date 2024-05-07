@@ -4,16 +4,12 @@ import { EventService } from 'src/app/services/event.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
+import { RestoranService } from 'src/app/services/restoran.service';
+import { Restoran } from 'src/models/restoranModel';
+import { Events } from 'src/models/eventModel';
 
-export interface Events {
-  id: number,
-  name: string,
-  detail: string,
-  eventCreator: string,
-  price: number,
-  location: string,
-  date: string,
-}
+
+
 
 @Component({
   selector: 'app-event-detail',
@@ -25,39 +21,10 @@ export class EventDetailComponent implements OnInit {
   isNewEvent = false;
   header = "";
   imageUrl: string = "assets/personicon.png";
-  isBuyButtonVisible: boolean = true;
-  isReturnButtonVisible: boolean = false;
   currentAuthorization = "";
-  spinner = false
+  event_Creator = "";
 
-  buyEvent() {
-    // Satın al butonuna tıklandığında
-    this.spinner = true
-    
-    setTimeout(() => {
-      // 2 saniye sonra çalışacak işlemler
-      this.spinner = false;
-      this.isBuyButtonVisible = false;
-      this.isReturnButtonVisible = true;
-      // İlgili satın alma işlemleri burada yapılabilir
-      this.snackbar.open('Event başarıyla satın alınmıştır', 'Ok');
-    }, 2000); // 2000 milisaniye (2 saniye) beklenir
-    
-  }
 
-  returnEvent() {
-    this.spinner = true
-    setTimeout(() => {
-      // 2 saniye sonra çalışacak işlemler
-      this.spinner = false;
-      this.isBuyButtonVisible = true;
-      this.isReturnButtonVisible = false;
-      this.snackbar.open('Event başarıyla iade edilmiştir', 'Ok');
-    }, 2000); // 2000 milisaniye (2 saniye) beklenir
-    
-    // İlgili iade işlemleri burada yapılabilir
-  }
-  
   event: Events = { //placeholder oluşturmak için oluşturduk
     id: 0,
     name: "",
@@ -67,6 +34,13 @@ export class EventDetailComponent implements OnInit {
     location: "",
     date: "",
   }
+  restoran : Restoran = {
+    isim: "",
+    konum: "",
+    restoranSahibi: "",
+    konsept: "",
+    puan: 0
+  }
   eventForm = new FormGroup({
     name: new FormControl('',Validators.required),
     detail: new FormControl('',Validators.required),
@@ -75,9 +49,16 @@ export class EventDetailComponent implements OnInit {
     location: new FormControl('',Validators.required),
     date: new FormControl('',[Validators.required]),
   });
+  restoranForm = new FormGroup({
+    isim: new FormControl('',Validators.required),
+    konum: new FormControl('',Validators.required),
+    restoranSahibi: new FormControl('',Validators.required),
+    konsept: new FormControl('',Validators.required),
+    puan: new FormControl('',Validators.required),
+  })
 
   
-  constructor(private eventService: EventService,private userService: UserService, private router: Router, private readonly route:ActivatedRoute,private snackbar:MatSnackBar) { }
+  constructor(private eventService: EventService,private userService: UserService, private router: Router, private readonly route:ActivatedRoute,private snackbar:MatSnackBar, private restoranService: RestoranService) { }
 
   ngOnInit(): void {
     //paramMap router'daki url'nin cevaptaki içerisinde id bulunan sahadaki değeri alır studentId değişkenine atar
@@ -88,32 +69,35 @@ export class EventDetailComponent implements OnInit {
         if(this.eventId === "add")
         {
           this.isNewEvent = true;
-          this.header = "Event Ekle"
+          this.header = "Restoran Ekle"
         }
         else
         {
           this.isNewEvent = false;
-          this.header = "Event Ekranı"
-          this.eventService.getEventById(this.eventId!).subscribe(
+          this.header = "Restoran Detayı"
+          debugger
+          this.restoranService.getRestoranById(this.eventId!).subscribe(
             (success) => {
-              this.event = success;
-              this.eventForm.patchValue(this.event);
-              this.eventForm.get('eventCreator')!.setValue(success.eventCreator);
+              this.restoran = success;
+              this.restoranForm.patchValue(this.restoran);
+              console.log(this.restoran)
+              // this.restoranForm.get('eventCreator')!.setValue(success.eventCreator);
             }
           )
         }
       }
     )
-    const storedUserData = localStorage.getItem('user');
-    if (storedUserData) {
-      var userData = JSON.parse(storedUserData);
-    }
-    this.userService.getUserById(userData.id).subscribe(
-      (user: any) => {
-        this.currentAuthorization = user.authorization_level
-      },
+    // const storedUserData = localStorage.getItem('user');
+    // if (storedUserData) {
+    //   var userData = JSON.parse(storedUserData);
+    // }
+    // this.userService.getUserById(userData.id).subscribe(
+    //   (user: any) => {
+    //     this.currentAuthorization = user.authorization_level
+    //     this.restoranForm.get('restoranSahibi')!.setValue(user.name + " " + user.surname);
+    //   },
       
-    );
+    // );
   }
 
   UpdateEvent(updatedEvent:any){

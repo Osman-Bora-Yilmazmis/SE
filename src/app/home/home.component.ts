@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { EventService } from '../services/event.service';
 import { UserService } from '../services/user.service';
+import { RestoranService } from '../services/restoran.service';
+import { Restoran } from 'src/models/restoranModel';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +14,9 @@ import { UserService } from '../services/user.service';
 })
 
 export class HomeComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'eventCreator', 'price', 'location' ,'date',"edit"];
-  dataSource = new MatTableDataSource<Events>();
+  displayedColumns: string[] = ['id', 'isim', 'restoranSahibi', 'konsept', 'puan', 'edit'];
+  // dataSource = new MatTableDataSource<Events>();
+  dataSource = new MatTableDataSource<Restoran>();
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -26,14 +29,22 @@ export class HomeComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor( private eventService: EventService ,private userService: UserService ) { }
+  constructor( private eventService: EventService ,private userService: UserService, private restoranService : RestoranService ) { }
 
   ngOnInit(): void {
-    this.eventService.getEvents().subscribe(
-      (res: Events[]) => {
-        this.dataSource.data = res;
+    debugger
+    // this.eventService.getEvents().subscribe(
+    //   (res: Events[]) => {
+    //     this.dataSource.data = res;
+    //     console.log(this.dataSource)
+    //   }
+    // );
+    this.restoranService.getRestorans().subscribe(
+      (res:Restoran[]) =>{
+        this.dataSource.data = res
+        console.log(JSON.stringify(this.dataSource.data) + "bbbbbb")
       }
-    );
+    )
     const storedUserData = localStorage.getItem('user');
     if (storedUserData) {
       var userData = JSON.parse(storedUserData);
@@ -55,14 +66,8 @@ export class HomeComponent implements AfterViewInit {
 }
 
 
-export interface Events {
-  id: string,
-  name: string,
-  detail: string,
-  eventCreator: string,
-  price: number,
-  location: string,
-  date: string,
-}
+
+
+
 
 

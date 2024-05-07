@@ -5,7 +5,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body {
-  background-image: url('assets/arkaplan.jpg'); /* Resmin dosya yolunu belirtin */
+  background-image: url('assets/restoranBackground.JPG'); /* Resmin dosya yolunu belirtin */
   background-size: cover; /* Resmin sayfa boyunca yayılmasını sağlar */
   background-position: center; /* Resmi ortalamak için */
   background-repeat: repeat; /* Resmi tekrarlamamak için */

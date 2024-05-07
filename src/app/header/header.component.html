@@ -1,10 +1,10 @@
-<mat-toolbar color="primary" class="toolbar-container">
+<mat-toolbar class="toolbar-container">
   <div>
     <div class="row">
       <div class="container">
-        <span>Ticket Sistemi</span>
-        <a>
-            <img src="assets/indir.jpg" style="width: 65px; height: 100%;">
+        <span>Restoran Menü Sistemi</span>
+        <a style="margin-left: 20px;">
+            <img src="assets/restoran.png" style="width: 55px; height: 100%;">
         </a>
       </div>
     </div>
@@ -12,16 +12,16 @@
   <span class="example-spacer"></span>
   <div class="button-container" *ngIf="userService.user != undefined">
     <button id="button1" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-      <mat-icon>account_circle</mat-icon>
+      <mat-icon>settings</mat-icon>
       <span>Kullanıcı Paneli</span>
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item routerLink="/home">
-        <mat-icon>event</mat-icon>
-        <span>Etkinlikler</span>
+        <mat-icon>restaurant</mat-icon>
+        <span>Restoranlar</span>
       </button>
       <button mat-menu-item routerLink="/usersettings">
-        <mat-icon>settings</mat-icon>
+        <mat-icon>account_circle</mat-icon>
         <span>Kullanıcı Bilgileri</span>
       </button>
     </mat-menu>

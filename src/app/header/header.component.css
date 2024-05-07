@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #f5d533;
 }
 #button1 {
   width: 150px;

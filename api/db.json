@@ -45,15 +45,88 @@
       "authorization_level": "customer"
     },
     {
-      "email": "kadin@hotmail.com",
+      "name": "Ertem",
+      "surname": "Sener",
+      "email": "ertem@hotmail.com",
+      "phone": "54344343434",
+      "gender": "Erkek",
+      "address": ".İzmir Bornova",
       "password": "12345678",
-      "name": "Kadın",
-      "surname": "Demir",
-      "dateOfBirth": "",
-      "phone": "",
-      "gender": "",
-      "address": "",
-      "id": 5
+      "id": 6,
+      "authorization_level": "customer"
+    },
+    {
+      "name": "Bahri",
+      "surname": "demir",
+      "email": "bahri@hotmail.com",
+      "phone": "55557795",
+      "gender": "Kadın",
+      "address": "<szdfxgchbnm",
+      "password": "123456789",
+      "id": 7,
+      "authorization_level": "customer"
+    }
+  ],
+  "restoranlar": [
+    {
+      "id": "1",
+      "isim": "Lezzetin Adresi",
+      "konum": "Şehir Merkezi",
+      "restoranSahibi": "Ali Bey",
+      "konsept": "Geleneksel Türk Mutfağı",
+      "puan": "4.5",
+      "yorumlar": [
+        {
+          "kullanıcıAdı": "Gurme123",
+          "yorum": "Mükemmel bir deneyim yaşadık! Lezzetli yemekler ve harika bir atmosfer.",
+          "puan": "5"
+        },
+        {
+          "kullanıcıAdı": "GezginAile",
+          "yorum": "Çocuklarımızla birlikte keyifli bir akşam geçirdik. Servis hızlı ve yemekler çok lezzetliydi.",
+          "puan": "4"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "isim": "Sushi Zamanı",
+      "konum": "Marina",
+      "restoranSahibi": "Sait Han",
+      "konsept": "Japon Mutfağı",
+      "puan": "4.2",
+      "yorumlar": [
+        {
+          "kullanıcıAdı": "SushiFan123",
+          "yorum": "Sushi kalitesi harikaydı! Kesinlikle tekrar geleceğim.",
+          "puan": "4"
+        },
+        {
+          "kullanıcıAdı": "GezginAvcı",
+          "yorum": "Yakınlarda bulunan en iyi sushi! Fiyat performans oranı da çok iyi.",
+          "puan": "4.5"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "isim": "Kahve Durağı",
+      "konum": "Mahalle",
+      "restoranSahibi": "Ayşe Hanım",
+      "konsept": "Kafe ve Kahve",
+      "puan": "4.8",
+      "yorumlar": [
+        {
+          "kullanıcıAdı": "KahveTutkunu",
+          "yorum": "Buradaki kahveler gerçekten enfes! Atmosfer de çok hoş.",
+          "puan": "5"
+        },
+        {
+          "kullanıcıAdı": "KafeKraliçesi",
+          "yorum": "Kahve seçenekleri çok çeşitli ve hepsi harika! Kesinlikle tavsiye ederim.",
+          "puan": "5"
+        }
+      ]
     }
   ],
   "events": [

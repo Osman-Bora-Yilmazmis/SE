@@ -54,7 +54,7 @@ export class UserSettingsComponent implements OnInit {
     this.userService.updateUserById(userData.id, {...e,authorization_level:userData.authorization_level}).subscribe(
       (response: any) => {
         this.profileForm.patchValue(response);
-        this.snackbar.open('Profiliniz Güncellenmiştir','Ok');
+        this.snackbar.open('Profiliniz Güncellenmiştir','Ok',{duration:3000});
       },
       
     );
