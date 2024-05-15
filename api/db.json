@@ -9,7 +9,50 @@
       "address": "İstanbul",
       "password": "12345678",
       "id": 1,
-      "authorization_level": "eventCreator"
+      "role": "owner",
+      "favoriteRestaurants": [
+          {
+            "id": "1",
+            "isim": "Lezzetin Adresi",
+            "konum": "Şehir Merkezi",
+            "restoranSahibi": "Ali Bey",
+            "konsept": "Geleneksel Türk Mutfağı",
+            "puan": "4.5",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "Gurme123",
+                "yorum": "Mükemmel bir deneyim yaşadık! Lezzetli yemekler ve harika bir atmosfer.",
+                "puan": "5"
+              },
+              {
+                "kullanıcıAdı": "GezginAile",
+                "yorum": "Çocuklarımızla birlikte keyifli bir akşam geçirdik. Servis hızlı ve yemekler çok lezzetliydi.",
+                "puan": "4"
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "isim": "Sushi Zamanı",
+            "konum": "Marina",
+            "restoranSahibi": "Sait Han",
+            "konsept": "Japon Mutfağı",
+            "puan": "4.2",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "SushiFan123",
+                "yorum": "Sushi kalitesi harikaydı! Kesinlikle tekrar geleceğim.",
+                "puan": "4"
+              },
+              {
+                "kullanıcıAdı": "GezginAvcı",
+                "yorum": "Yakınlarda bulunan en iyi sushi! Fiyat performans oranı da çok iyi.",
+                "puan": "4.5"
+              }
+            ]
+          }
+      ]      
+      
     },
     {
       "name": "Fatma",
@@ -20,7 +63,49 @@
       "address": "İzmir",
       "password": "12345678",
       "id": 4,
-      "authorization_level": "eventCreator"
+      "role": "owner",
+      "favoriteRestaurants": [
+          {
+            "id": "1",
+            "isim": "Lezzetin Adresi",
+            "konum": "Şehir Merkezi",
+            "restoranSahibi": "Ali Bey",
+            "konsept": "Geleneksel Türk Mutfağı",
+            "puan": "4.5",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "Gurme123",
+                "yorum": "Mükemmel bir deneyim yaşadık! Lezzetli yemekler ve harika bir atmosfer.",
+                "puan": "5"
+              },
+              {
+                "kullanıcıAdı": "GezginAile",
+                "yorum": "Çocuklarımızla birlikte keyifli bir akşam geçirdik. Servis hızlı ve yemekler çok lezzetliydi.",
+                "puan": "4"
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "isim": "Sushi Zamanı",
+            "konum": "Marina",
+            "restoranSahibi": "Sait Han",
+            "konsept": "Japon Mutfağı",
+            "puan": "4.2",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "SushiFan123",
+                "yorum": "Sushi kalitesi harikaydı! Kesinlikle tekrar geleceğim.",
+                "puan": "4"
+              },
+              {
+                "kullanıcıAdı": "GezginAvcı",
+                "yorum": "Yakınlarda bulunan en iyi sushi! Fiyat performans oranı da çok iyi.",
+                "puan": "4.5"
+              }
+            ]
+          }
+      ]    
     },
     {
       "name": "Mehmet",
@@ -31,7 +116,49 @@
       "address": "Eskişehir/Odunpazarı",
       "password": "12345678",
       "id": 2,
-      "authorization_level": "customer"
+      "role": "customer",
+      "favoriteRestaurants": [
+          {
+            "id": "1",
+            "isim": "Lezzetin Adresi",
+            "konum": "Şehir Merkezi",
+            "restoranSahibi": "Ali Bey",
+            "konsept": "Geleneksel Türk Mutfağı",
+            "puan": "4.5",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "Gurme123",
+                "yorum": "Mükemmel bir deneyim yaşadık! Lezzetli yemekler ve harika bir atmosfer.",
+                "puan": "5"
+              },
+              {
+                "kullanıcıAdı": "GezginAile",
+                "yorum": "Çocuklarımızla birlikte keyifli bir akşam geçirdik. Servis hızlı ve yemekler çok lezzetliydi.",
+                "puan": "4"
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "isim": "Sushi Zamanı",
+            "konum": "Marina",
+            "restoranSahibi": "Sait Han",
+            "konsept": "Japon Mutfağı",
+            "puan": "4.2",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "SushiFan123",
+                "yorum": "Sushi kalitesi harikaydı! Kesinlikle tekrar geleceğim.",
+                "puan": "4"
+              },
+              {
+                "kullanıcıAdı": "GezginAvcı",
+                "yorum": "Yakınlarda bulunan en iyi sushi! Fiyat performans oranı da çok iyi.",
+                "puan": "4.5"
+              }
+            ]
+          }
+      ]    
     },
     {
       "name": "onur",
@@ -42,7 +169,49 @@
       "address": "İzmir",
       "password": "12345678",
       "id": 3,
-      "authorization_level": "customer"
+      "role": "customer",
+      "favoriteRestaurants": [
+          {
+            "id": "1",
+            "isim": "Lezzetin Adresi",
+            "konum": "Şehir Merkezi",
+            "restoranSahibi": "Ali Bey",
+            "konsept": "Geleneksel Türk Mutfağı",
+            "puan": "4.5",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "Gurme123",
+                "yorum": "Mükemmel bir deneyim yaşadık! Lezzetli yemekler ve harika bir atmosfer.",
+                "puan": "5"
+              },
+              {
+                "kullanıcıAdı": "GezginAile",
+                "yorum": "Çocuklarımızla birlikte keyifli bir akşam geçirdik. Servis hızlı ve yemekler çok lezzetliydi.",
+                "puan": "4"
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "isim": "Sushi Zamanı",
+            "konum": "Marina",
+            "restoranSahibi": "Sait Han",
+            "konsept": "Japon Mutfağı",
+            "puan": "4.2",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "SushiFan123",
+                "yorum": "Sushi kalitesi harikaydı! Kesinlikle tekrar geleceğim.",
+                "puan": "4"
+              },
+              {
+                "kullanıcıAdı": "GezginAvcı",
+                "yorum": "Yakınlarda bulunan en iyi sushi! Fiyat performans oranı da çok iyi.",
+                "puan": "4.5"
+              }
+            ]
+          }
+      ]    
     },
     {
       "name": "Ertem",
@@ -53,7 +222,49 @@
       "address": ".İzmir Bornova",
       "password": "12345678",
       "id": 6,
-      "authorization_level": "customer"
+      "role": "customer",
+      "favoriteRestaurants": [
+          {
+            "id": "1",
+            "isim": "Lezzetin Adresi",
+            "konum": "Şehir Merkezi",
+            "restoranSahibi": "Ali Bey",
+            "konsept": "Geleneksel Türk Mutfağı",
+            "puan": "4.5",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "Gurme123",
+                "yorum": "Mükemmel bir deneyim yaşadık! Lezzetli yemekler ve harika bir atmosfer.",
+                "puan": "5"
+              },
+              {
+                "kullanıcıAdı": "GezginAile",
+                "yorum": "Çocuklarımızla birlikte keyifli bir akşam geçirdik. Servis hızlı ve yemekler çok lezzetliydi.",
+                "puan": "4"
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "isim": "Sushi Zamanı",
+            "konum": "Marina",
+            "restoranSahibi": "Sait Han",
+            "konsept": "Japon Mutfağı",
+            "puan": "4.2",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "SushiFan123",
+                "yorum": "Sushi kalitesi harikaydı! Kesinlikle tekrar geleceğim.",
+                "puan": "4"
+              },
+              {
+                "kullanıcıAdı": "GezginAvcı",
+                "yorum": "Yakınlarda bulunan en iyi sushi! Fiyat performans oranı da çok iyi.",
+                "puan": "4.5"
+              }
+            ]
+          }
+      ]    
     },
     {
       "name": "Bahri",
@@ -64,17 +275,62 @@
       "address": "<szdfxgchbnm",
       "password": "123456789",
       "id": 7,
-      "authorization_level": "customer"
+      "role": "customer",
+      "favoriteRestaurants": [
+          {
+            "id": "1",
+            "isim": "Lezzetin Adresi",
+            "konum": "Şehir Merkezi",
+            "restoranSahibi": "Ali Bey",
+            "konsept": "Geleneksel Türk Mutfağı",
+            "puan": "4.5",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "Gurme123",
+                "yorum": "Mükemmel bir deneyim yaşadık! Lezzetli yemekler ve harika bir atmosfer.",
+                "puan": "5"
+              },
+              {
+                "kullanıcıAdı": "GezginAile",
+                "yorum": "Çocuklarımızla birlikte keyifli bir akşam geçirdik. Servis hızlı ve yemekler çok lezzetliydi.",
+                "puan": "4"
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "isim": "Sushi Zamanı",
+            "konum": "Marina",
+            "restoranSahibi": "Sait Han",
+            "konsept": "Japon Mutfağı",
+            "puan": "4.2",
+            "yorumlar": [
+              {
+                "kullanıcıAdı": "SushiFan123",
+                "yorum": "Sushi kalitesi harikaydı! Kesinlikle tekrar geleceğim.",
+                "puan": "4"
+              },
+              {
+                "kullanıcıAdı": "GezginAvcı",
+                "yorum": "Yakınlarda bulunan en iyi sushi! Fiyat performans oranı da çok iyi.",
+                "puan": "4.5"
+              }
+            ]
+          }
+      ]    
     }
   ],
   "restoranlar": [
     {
       "id": "1",
-      "isim": "Lezzetin Adresi",
+      "isim": "Hai Hai",
       "konum": "Şehir Merkezi",
       "restoranSahibi": "Ali Bey",
-      "konsept": "Geleneksel Türk Mutfağı",
+      "konsept": "Uzak Doğu Mutfağı",
       "puan": "4.5",
+      "restoranImageUrl":"haihai.png",
+      "qrMenuUrl":"haihaiQR.png",
+      "menuUrl":"https://haihaipubbornova.dijital.menu",
       "yorumlar": [
         {
           "kullanıcıAdı": "Gurme123",
@@ -90,11 +346,14 @@
     },
     {
       "id": "2",
-      "isim": "Sushi Zamanı",
+      "isim": "Cartel",
       "konum": "Marina",
       "restoranSahibi": "Sait Han",
-      "konsept": "Japon Mutfağı",
+      "konsept": "3. Nesil Kahveci",
       "puan": "4.2",
+      "restoranImageUrl":"cartel.png",
+      "qrMenuUrl":"",
+      "menuUrl":"https://www.diyezajans.com/cartelbornova/",
       "yorumlar": [
         {
           "kullanıcıAdı": "SushiFan123",
@@ -110,11 +369,83 @@
     },
     {
       "id": "3",
-      "isim": "Kahve Durağı",
+      "isim": "Chick İnn",
+      "konum": "İzmir/Alsancak",
+      "restoranSahibi": "Ayşe Hanım",
+      "konsept": "Asya Mutfağı",
+      "puan": "4.8",
+      "restoranImageUrl":"chickinn.png",
+      "qrMenuUrl":"",
+      "menuUrl":"http://chickinn.com",
+      "yorumlar": [
+        {
+          "kullanıcıAdı": "KahveTutkunu",
+          "yorum": "Buradaki kahveler gerçekten enfes! Atmosfer de çok hoş.",
+          "puan": "5"
+        },
+        {
+          "kullanıcıAdı": "KafeKraliçesi",
+          "yorum": "Kahve seçenekleri çok çeşitli ve hepsi harika! Kesinlikle tavsiye ederim.",
+          "puan": "5"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "isim": "Dora",
+      "konum": "Şehir Merkezi",
+      "restoranSahibi": "Ali Bey",
+      "konsept": "Cafe Restaourant",
+      "puan": "4.5",
+      "restoranImageUrl":"dora.png",
+      "qrMenuUrl":"",
+      "menuUrl":"https://qrmenuapp.akinsoft.com.tr/ZAGQDH/manisa/c-21999",
+      "yorumlar": [
+        {
+          "kullanıcıAdı": "Gurme123",
+          "yorum": "Mükemmel bir deneyim yaşadık! Lezzetli yemekler ve harika bir atmosfer.",
+          "puan": "5"
+        },
+        {
+          "kullanıcıAdı": "GezginAile",
+          "yorum": "Çocuklarımızla birlikte keyifli bir akşam geçirdik. Servis hızlı ve yemekler çok lezzetliydi.",
+          "puan": "4"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "isim": "No:57",
+      "konum": "İzmir/Alsancak",
+      "restoranSahibi": "Sait Han",
+      "konsept": "Cafe - Bar",
+      "puan": "4.2",
+      "restoranImageUrl":"No57.png",
+      "qrMenuUrl":"",
+      "menuUrl":"https://www.isletmem.online/noelliyedi/menu.html",
+      "yorumlar": [
+        {
+          "kullanıcıAdı": "SushiFan123",
+          "yorum": "Sushi kalitesi harikaydı! Kesinlikle tekrar geleceğim.",
+          "puan": "4"
+        },
+        {
+          "kullanıcıAdı": "GezginAvcı",
+          "yorum": "Yakınlarda bulunan en iyi sushi! Fiyat performans oranı da çok iyi.",
+          "puan": "4.5"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "isim": "Rene",
       "konum": "Mahalle",
       "restoranSahibi": "Ayşe Hanım",
-      "konsept": "Kafe ve Kahve",
+      "konsept": "Restoran - Cafe",
       "puan": "4.8",
+      "restoranImageUrl":"rene.png",
+      "qrMenuUrl":"",
+      "menuUrl":"https://renemenu.koskbarry.com",
       "yorumlar": [
         {
           "kullanıcıAdı": "KahveTutkunu",

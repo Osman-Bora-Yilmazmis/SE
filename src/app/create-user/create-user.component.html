@@ -3,53 +3,58 @@
     <div class="form-container">
       <div class="title">Hesap Oluştur</div>
       <form [formGroup]="createUserForm">
-          <mat-form-field appearance="outline">
-              <mat-label>Emailinizi Giriniz</mat-label>
-              <input matInput formControlName="email"/>
-              <mat-error>
-                <p *ngIf="f['email'].errors && f['email'].errors['required']">Email zorunludur</p>
-                <p *ngIf="f['email'].errors && f['email'].errors['email']">Email formatını doğru giriniz</p>
+        <mat-form-field appearance="outline">
+          <mat-label>Emailinizi Giriniz</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error>
+            <p *ngIf="f['email'].errors && f['email'].errors['required']">Email zorunludur</p>
+            <p *ngIf="f['email'].errors && f['email'].errors['email']">Email formatını doğru giriniz</p>
 
-              </mat-error>
+          </mat-error>
 
-          </mat-form-field>
-
-          <mat-form-field appearance="outline">
-            <mat-label>Adınızı Giriniz</mat-label>
-            <input matInput formControlName="name"/>
-            <mat-error>
-              <p *ngIf="f['name'].errors && f['name'].errors['name']">ad zorunludur</p>
-            </mat-error>
-        </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Soyadınızı Giriniz</mat-label>
-            <input matInput formControlName="surname"/>
-            <mat-error>
-              <p *ngIf="f['surname'].errors && f['surname'].errors['surname']">soyad zorunludur</p>
-            </mat-error>
         </mat-form-field>
 
-          <mat-form-field appearance="outline">
-              <mat-label>Şifrenizi Giriniz</mat-label>
-              <input type="password" formControlName="password" matInput/>
-              <mat-error>
-                <p *ngIf="f['password'].errors && f['password'].errors['required']">Şifre zorunludur</p>
-                <p *ngIf="f['password'].errors && f['password'].errors['minlength']">Minumum 8 karakter giriniz</p>
+        <mat-form-field appearance="outline">
+          <mat-label>Adınızı Giriniz</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error>
+            <p *ngIf="f['name'].errors && f['name'].errors['name']">ad zorunludur</p>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Soyadınızı Giriniz</mat-label>
+          <input matInput formControlName="surname" />
+          <mat-error>
+            <p *ngIf="f['surname'].errors && f['surname'].errors['surname']">soyad zorunludur</p>
+          </mat-error>
+        </mat-form-field>
 
-              </mat-error>
-          </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Şifrenizi Giriniz</mat-label>
+          <input type="password" formControlName="password" matInput />
+          <mat-error>
+            <p *ngIf="f['password'].errors && f['password'].errors['required']">Şifre zorunludur</p>
+            <p *ngIf="f['password'].errors && f['password'].errors['minlength']">Minumum 8 karakter giriniz</p>
+
+          </mat-error>
+        </mat-form-field>
       </form>
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedRole">
+        <div style="display: flex; justify-content: space-between;">
+          <mat-radio-button value="customer">Müşteriyim</mat-radio-button>
+          <mat-radio-button value="owner">Restoran Sahibiyim</mat-radio-button>
+        </div>
+      </mat-radio-group>
       <div class="buttons-container">
-          <button mat-raised-button class="login-button" (click)="createAccount()" [disabled]="createUserForm.invalid">
-              Kaydol
-          </button>
-          <p>Veya</p>
-          <button mat-button  routerLink="/login">Giriş Yap</button>
-          <!-- {{createUserForm.value | json}} -->
+        <button mat-raised-button class="login-button" (click)="createAccount()" [disabled]="createUserForm.invalid">
+          Kaydol
+        </button>
+        <p>Veya</p>
+        <button mat-button routerLink="/login">Giriş Yap</button>
+        <!-- {{createUserForm.value | json}} -->
       </div>
+    </div>
   </div>
-  </div>
-   
- 
-</div>
 
+
+</div>

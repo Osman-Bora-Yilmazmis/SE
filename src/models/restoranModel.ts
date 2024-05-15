@@ -6,5 +6,8 @@ export interface Restoran {
     restoranSahibi: string,
     konsept: string,
     puan: number,
-    yorumlar?: Yorum[]
+    restoranImageUrl:"",
+    qrMenuUrl:"",
+    menuUrl:"",
+    yorumlar: [],
   }

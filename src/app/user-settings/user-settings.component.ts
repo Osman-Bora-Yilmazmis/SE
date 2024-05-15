@@ -51,7 +51,7 @@ export class UserSettingsComponent implements OnInit {
     if (storedUserData) {
       var userData = JSON.parse(storedUserData);
     }
-    this.userService.updateUserById(userData.id, {...e,authorization_level:userData.authorization_level}).subscribe(
+    this.userService.updateUserById(userData.id, {...e,role:userData.role}).subscribe(
       (response: any) => {
         this.profileForm.patchValue(response);
         this.snackbar.open('Profiliniz Güncellenmiştir','Ok',{duration:3000});

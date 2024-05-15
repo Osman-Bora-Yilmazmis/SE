@@ -1,0 +1,43 @@
+<div class="page-header">
+    <div class="container">
+      <h1><b>Favorilerim</b></h1>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-6 mt-5" *ngFor="let restoran of favoriteData">
+      <div [routerLink]="['/restoran', restoran.id]" class="mat-card-container">
+          <mat-card class="example-card">
+              <mat-card-header>
+                  <mat-card-title style="overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 1;
+                  -webkit-box-orient: vertical;">{{restoran.isim}}</mat-card-title>
+              </mat-card-header>
+              <img mat-card-image src="assets/yemek.jpeg" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                  <p style="overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  text-align: center;
+                  font-size: large;">
+                      {{restoran.konsept}}
+                  </p>
+                  <p style="text-align: center; font-size: large;">⭐ {{restoran.puan}}</p>
+              </mat-card-content>
+              <!-- <mat-card-actions>
+                  <button (click)="restoranDetail(restoran)" mat-raised-button color="primary">Görüntüle</button>
+              </mat-card-actions> -->
+          </mat-card>
+      </div>
+  </div>
+  
+
+  </div>
+</div>
+
+          <!-- <button (click)="openDialog(restoran,true)" mat-raised-button color="accent">Düzenle</button> -->

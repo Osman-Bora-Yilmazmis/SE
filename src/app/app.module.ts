@@ -27,6 +27,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { EventDetailComponent } from './home/event-detail/event-detail.component';
 import { MatCardModule } from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatRadioModule} from '@angular/material/radio';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     CreateUserComponent,
     HomeComponent,
     UserSettingsComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatSelectModule,
     MatDividerModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatRadioModule
   ],
   providers: [BaseService],
   bootstrap: [AppComponent]

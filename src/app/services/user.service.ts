@@ -32,6 +32,8 @@ export class UserService extends BaseService {
     return this.putReq(`/users/${userId}`, updatedUserObj);
    }
 
+   
+
   
    
 }

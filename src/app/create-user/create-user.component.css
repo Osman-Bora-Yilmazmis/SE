@@ -49,3 +49,7 @@ mat-form-field{
   background-color: salmon;
   color: white;
 }
+
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+  margin-left: 16px;
+}

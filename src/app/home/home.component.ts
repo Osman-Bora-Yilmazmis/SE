@@ -5,18 +5,24 @@ import { EventService } from '../services/event.service';
 import { UserService } from '../services/user.service';
 import { RestoranService } from '../services/restoran.service';
 import { Restoran } from 'src/models/restoranModel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  
+
 })
 
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent {
+
   displayedColumns: string[] = ['id', 'isim', 'restoranSahibi', 'konsept', 'puan', 'edit'];
   // dataSource = new MatTableDataSource<Events>();
-  dataSource = new MatTableDataSource<Restoran>();
+  // dataSource = new MatTableDataSource<Restoran>();
+  restoranData: Array<any> = [];
+  pageSize = 8;
+  page = 13;
+  tekrestoran: any
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -24,12 +30,12 @@ export class HomeComponent implements AfterViewInit {
   currentAuthorization = '';
 
 
-  
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
 
-  constructor( private eventService: EventService ,private userService: UserService, private restoranService : RestoranService ) { }
+  // ngAfterViewInit() {
+  //   this.dataSource.paginator = this.paginator;
+  // }
+
+  constructor(private eventService: EventService, private userService: UserService, private restoranService: RestoranService, private router: Router) { }
 
   ngOnInit(): void {
     debugger
@@ -40,29 +46,35 @@ export class HomeComponent implements AfterViewInit {
     //   }
     // );
     this.restoranService.getRestorans().subscribe(
-      (res:Restoran[]) =>{
-        this.dataSource.data = res
-        console.log(JSON.stringify(this.dataSource.data) + "bbbbbb")
+      (res) => {
+        console.dir(res);
+        this.restoranData = res
       }
-    )
+    );
     const storedUserData = localStorage.getItem('user');
     if (storedUserData) {
       var userData = JSON.parse(storedUserData);
     }
     this.userService.getUserById(userData.id).subscribe(
       (user: any) => {
-        this.currentAuthorization = user.authorization_level
+        this.currentAuthorization = user.role
       },
-      
+
     );
   }
 
-  filterStudents(){
-    this.dataSource.filter = this.filterString.trim().toLowerCase();
+  // filterStudents(){
+  //   this.dataSource.filter = this.filterString.trim().toLowerCase();
+  // }
+
+  openDialog(_t17: any, arg1: boolean) {
+    throw new Error('Method not implemented.');
   }
-  
 
-
+  // Butona tıklandığında çalışacak fonksiyon
+  restoranDetail(restoran: any) {
+    this.router.navigate(['/restoran', restoran.id]);
+  }
 }
 
 

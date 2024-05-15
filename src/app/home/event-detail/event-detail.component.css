@@ -30,3 +30,8 @@
   .current-date {
     background-color: #e0e0e0; /* Set the background color for the current date */
   }
+
+mat-form-field.example-full-width {
+  background-color: #ffffff; /* Beyaz arka plan rengi */
+}
+

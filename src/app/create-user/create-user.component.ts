@@ -10,35 +10,40 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-user.component.css']
 })
 export class CreateUserComponent implements OnInit {
+  selectedRole: string = 'customer'; // Başlangıçta 'Müşteriyim' seçeneği seçili
 
-  constructor(private fb:FormBuilder,public userService:UserService,private snackbar:MatSnackBar,private router:Router) { }
+
+  constructor(private fb: FormBuilder, public userService: UserService, private snackbar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  
+
   createUserForm = this.fb.group({
-    email:['',[Validators.required,Validators.email]],
-    password:['',[Validators.required,Validators.minLength(8)]],
-    name:['',Validators.required],
-    surname:['',Validators.required],
-    dateOfBirth:[''],
-    phone : [''],
-    gender:[''],
-    address:[''],
-    authorization_level:['customer']
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(8)]],
+    name: ['', Validators.required],
+    surname: ['', Validators.required],
+    dateOfBirth: [''],
+    phone: [''],
+    gender: [''],
+    address: [''],
+    role: ['']
   })
 
   get f(): { [key: string]: AbstractControl } {
     return this.createUserForm.controls;
   }
 
-  createAccount()
-  {
-      this.userService.createAccount(this.createUserForm.value).subscribe((res:any)=>{
-        console.log(res);
-        this.router.navigateByUrl('/login');
-        this.snackbar.open('Kullanıcı Başarıyla Oluşturuldu','Ok',{duration:3000});
-      })
+
+  createAccount() {
+    // Kullanıcı rolünü form değerlerine eklemeden önce seçili olan role göre ayarla
+    this.createUserForm.patchValue({ role: this.selectedRole });
+
+    this.userService.createAccount(this.createUserForm.value).subscribe((res: any) => {
+      console.log(res);
+      this.router.navigateByUrl('/login');
+      this.snackbar.open('Kullanıcı Başarıyla Oluşturuldu', 'Ok', { duration: 3000 });
+    });
   }
 }

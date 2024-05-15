@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { EventDetailComponent } from './home/event-detail/event-detail.component';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'usersettings', component:UserSettingsComponent},
   // {path:"event/add",component:EventDetailComponent},
-  {path:'event/:id', component:EventDetailComponent},
+  {path:'restoran/:id', component:EventDetailComponent},
+  {path:'favourites', component:FavouritesComponent},
 ];
 
 @NgModule({

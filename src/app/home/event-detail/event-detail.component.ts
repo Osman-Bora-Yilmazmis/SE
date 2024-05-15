@@ -17,12 +17,14 @@ import { Events } from 'src/models/eventModel';
   styleUrls: ['./event-detail.component.css']
 })
 export class EventDetailComponent implements OnInit {
+
   eventId:string | null | undefined; //backend'den gelen veri null veya undefined olabilir diye böyle atadık
   isNewEvent = false;
   header = "";
   imageUrl: string = "assets/personicon.png";
   currentAuthorization = "";
   event_Creator = "";
+  user : any = {};
 
 
   event: Events = { //placeholder oluşturmak için oluşturduk
@@ -39,7 +41,11 @@ export class EventDetailComponent implements OnInit {
     konum: "",
     restoranSahibi: "",
     konsept: "",
-    puan: 0
+    puan: 0,
+    restoranImageUrl:"",
+    qrMenuUrl:"",
+    menuUrl:"",
+    yorumlar: []
   }
   eventForm = new FormGroup({
     name: new FormControl('',Validators.required),
@@ -58,14 +64,22 @@ export class EventDetailComponent implements OnInit {
   })
 
   
-  constructor(private eventService: EventService,private userService: UserService, private router: Router, private readonly route:ActivatedRoute,private snackbar:MatSnackBar, private restoranService: RestoranService) { }
+  constructor(private eventService: EventService,private userService: UserService, private router: Router, private readonly route:ActivatedRoute,private snackbar:MatSnackBar, private restoranService: RestoranService) {
+
+   }
 
   ngOnInit(): void {
+
+    this.user = JSON.parse(localStorage.getItem('user') ?? '{}');
+    console.log("aaaa" + this.user)
+
+
     //paramMap router'daki url'nin cevaptaki içerisinde id bulunan sahadaki değeri alır studentId değişkenine atar
     this.route.paramMap.subscribe(
       (params) => {
         debugger;
         this.eventId = params.get("id") //router üzerindeki id yi aldık
+
         if(this.eventId === "add")
         {
           this.isNewEvent = true;
@@ -81,17 +95,19 @@ export class EventDetailComponent implements OnInit {
               this.restoran = success;
               this.restoranForm.patchValue(this.restoran);
               console.log(this.restoran)
+
               // this.restoranForm.get('eventCreator')!.setValue(success.eventCreator);
             }
           )
+
         }
       }
     )
-    // const storedUserData = localStorage.getItem('user');
-    // if (storedUserData) {
-    //   var userData = JSON.parse(storedUserData);
+    // const storeduser = localStorage.getItem('user');
+    // if (storeduser) {
+    //   var user = JSON.parse(storeduser);
     // }
-    // this.userService.getUserById(userData.id).subscribe(
+    // this.userService.getUserById(user.id).subscribe(
     //   (user: any) => {
     //     this.currentAuthorization = user.authorization_level
     //     this.restoranForm.get('restoranSahibi')!.setValue(user.name + " " + user.surname);
@@ -134,6 +150,14 @@ export class EventDetailComponent implements OnInit {
     )
   }
 
+  FavoriyeEkle(){
+    console.log("sa")
+  }
+
+  MenuButton() {
+    window.open(this.restoran.menuUrl, "_blank");
+  }
+  
 
 
 }
